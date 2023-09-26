@@ -44,7 +44,22 @@ main {
     background-color: blueviolet;
 }
 .filtros {
-    background-color: chartreuse;
+    background-color: rgb(218, 216, 216);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.filtros select {
+    display: flex;
+    justify-content: space-around;
+    width: 1200px; 
+    height: 25px;
+    border-radius: 0%;
+    border: solid 1px rgb(169, 169, 169);
+}
+.filtros p {
+    height: 12px;
+    padding-top: 5px;
 }
 .grilla_autos {
     background-color: cadetblue
@@ -52,7 +67,7 @@ main {
 .paginas {
     background-color: cornflowerblue;
 }
-/* footer */
+/* FOOTER */
 footer {
     grid-area: footer;
     background-color: rgb(0, 17, 95);
@@ -71,11 +86,11 @@ footer b {
     text-align: center;
 }
 
-/* grid */
+/* GRID */
 .grid_container {
     height: 100vh;
     display: grid;
-    grid-template-columns: 20% auto;
+    grid-template-columns: 12% auto;
     grid-template-areas: 
     "nav_bar main"
     "nav_bar main"
