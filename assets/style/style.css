@@ -5,14 +5,15 @@
 }
 
 nav {
-    grid-area: menu;
+    grid-area: nav_bar;
     display: flex;
     align-items: center;
     color: white;
     background-color: rgb(73, 73, 163);
-    justify-content: space-between;
-    
+    justify-content: space-between; 
+    height: 125%;
 }
+
 nav div {
     display: flex;
     align-items: center;
@@ -22,4 +23,40 @@ nav div {
 nav h4 {
     margin-bottom: 0;
 }
+main {
+    display: grid;
+    grid-template-rows: 8% auto 8%;
+    grid-area: main;
+    background-color: blueviolet;
+}
+.filtros {
+    background-color: chartreuse;
+}
+.grilla_autos {
+    background-color: cadetblue
+}
+.paginas {
+    background-color: cornflowerblue;
+}
+footer {
+    grid-area: footer;
+    background-color: burlywood;
+    height: 40%;
+    align-self: flex-end;
+}
+
+.grid_container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 20% auto;
+    grid-template-areas: 
+    "nav_bar main"
+    "nav_bar main"
+    "nav_bar main"
+    "footer main";
+}
+
+
+
+
 
