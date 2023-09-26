@@ -65,7 +65,10 @@ main {
     background-color: cadetblue
 }
 .paginas {
-    background-color: cornflowerblue;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
 }
 /* FOOTER */
 footer {
