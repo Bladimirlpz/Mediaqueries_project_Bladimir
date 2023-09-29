@@ -3,104 +3,188 @@
     margin: 0;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-/* BARRA DE NAVEGACION */
+
+/* NAV  MOBILE */
 nav {
     grid-area: nav_bar;
+    background:rgb(43, 75, 255);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    
+}
+nav > div {
+    display: flex;
+    align-items: center;
+    padding-left: 25px;
+}
+nav h4 {
+    padding-left: 15px;
+    margin-bottom: 0;
+}
+nav > i {
+    display: flex;
+    padding-right: 25px;
+}
+nav > ul {
+    display: none;
+}
+
+/* BLOQUE FILTROS MOBILE*/
+.filtros {
+    grid-area: filtros;
+    background-color: aliceblue;
     display: flex;
     flex-direction: column;
-    color: white;
-    background-color: rgb(73, 73, 163);
-    height: 125%;
+    align-items: center;
+    
 }
-nav ul{
+.filtros div p {
+    padding-top: 10px;
+    margin-bottom: 0;
+}
+.filtros select {
+    margin-bottom: 10px;
+    width: 50%;
+    background-color: white;
+    border: solid 1px gray;
+    height: 25px;
+    padding-left: 10px;
+}
+/* GRILLA DE AUTOS MOBILE */
+.grilla_autos {
+    grid-area: grilla_autos;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 10px;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
+}
+.auto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    height: 310px;
+    border: solid 1px rgb(208, 208, 208);
+    border-radius: 5px;
+    
+}
+.auto p {
+    margin-bottom: 0px;
+}
+.auto img {
+        width: 200px;
+        border-radius: 5px;
+}
+.auto button {
+    background:rgb(43, 75, 255);
+    color: white;
+    width: 80px;
+    padding: 1px;
+    border: solid 1px black;
+    border-radius: 5px;
+}
+/* PAGINACION MOBILE*/
+.paginas {
+    grid-area: paginas;
+}
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+}
+/* FOOTER MOBILE*/
+footer {
+    grid-area: footer;
+    background-color: blue;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: smaller;
+    height: 50px;
+}
+
+
+/* GRID MOBILE*/
+.grid_container {
+    display: grid;
+    grid-template-rows: 10% 10% 60% 10%;
+    grid-template-areas: 
+    "nav_bar"
+    "filtros"
+    "grilla_autos"
+    "paginas"
+    "footer";
+}
+
+
+
+
+@media (min-width: 576px) {
+    
+    /* BLOQUE FILTROS DESKTOP */
+    .filtros {
+        height: 80px;
+    }
+
+    .filtros select {
+        width: 80%;
+}
+    /* NAV  DESKTOP */
+nav {
+    height: 100vh;
+    min-height: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+nav div {
+    padding: 0;
+    padding-top: 20px;
+}
+
+nav > ul {
+    display: block;
     list-style-type: none;
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding-left: 0;
-    padding-top: 30px;
-    gap: 5px;
+    padding: 0;
+    padding-top: 20px;
+}
+nav > .fa-solid {
+    display: none;
 }
 
-nav div {
-    display: flex;
-    align-items: center;    
-    padding-top: 10px;
-    justify-content: center;
-}
-nav h4 {
-    margin-bottom: 0;
-    font-size: large;
-    padding-left: 10px;
-}
-nav i {
-    padding-left: 10px;
-}
-/* SECCION MAIN */
-main {
-    display: grid;
-    grid-template-rows: 8% auto 8%;
-    grid-area: main;
-    background-color: blueviolet;
-}
-.filtros {
-    background-color: rgb(218, 216, 216);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.filtros select {
-    display: flex;
-    justify-content: space-around;
-    width: 1200px; 
-    height: 25px;
-    border-radius: 0%;
-    border: solid 1px rgb(169, 169, 169);
-}
-.filtros p {
-    height: 12px;
-    padding-top: 5px;
-}
-.grilla_autos {
-    background-color: cadetblue
-}
-.paginas {
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
-}
-/* FOOTER */
+    /* FOOTER DESKTOP */
 footer {
     grid-area: footer;
-    background-color: rgb(0, 17, 95);
-    height: 40%;
-    align-self: flex-end;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-}
-footer .iconos{
-    padding-top: 10px;
-}
-footer b {
-    font-size: small;
     text-align: center;
+    height: 100%;
 }
 
-/* GRID */
-.grid_container {
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 12% auto;
-    grid-template-areas: 
-    "nav_bar main"
-    "nav_bar main"
-    "nav_bar main"
-    "footer main";
+    /* PAGINACION DESKTOP*/
+.paginas {
+    grid-area: paginas;
 }
 
+/* GRID DESKTOP */
+    .grid_container {
+        display: grid;
+        grid-template-columns: 20% 80%;
+        grid-template-areas: 
+        "nav_bar filtros"
+        "nav_bar grilla_autos"
+        "footer paginas";
+    }
+    
+}
 
 
 
